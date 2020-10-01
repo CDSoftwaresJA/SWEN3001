@@ -13,7 +13,7 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:gravity="center"
-        android:text="@string/help_your_community_by_reporting_your_diagnosis"
+        android:text="@string/report_info"
         android:textColor="#516A7B"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

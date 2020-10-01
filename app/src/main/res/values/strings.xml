@@ -4,6 +4,6 @@
     <string name="title_dashboard">Health Report</string>
     <string name="title_notifications">Profile</string>
     <string name="new_report">+ New Report</string>
-    <string name="help_your_community_by_reporting_your_diagnosis">Help your community by reporting your diagnosis</string>
+    <string name="report_info">Help your community by reporting your diagnosis</string>
 
 </resources>
