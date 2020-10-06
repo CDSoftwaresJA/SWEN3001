@@ -18,5 +18,16 @@
     <string name="new_report">+ New Report</string>
     <string name="report_info">Help your community by reporting your diagnosis</string>
 
+
+
+    <string name="exposures">Exposures</string>
+    <string name="exposures_switch">On ></string>
+    <string name="exposure_notifications">Exposure Notifications</string>
+    <string name="notification_info">You will be notified if you are exposed to COVID-19,\nExposure last checked Today at</string>
+    <string name="change_stat">Update My Status</string>
+    <string name="change_stat_switch">Negative ></string>
+    <string name="my_status">My Status</string>
+    <string name="exposures2">EXPOSURES IN PAST 14 DAYS</string>
+
 >>>>>>> 0f983d241aa081e73a5f26e23a8d2465e0f0aee4
 </resources>
