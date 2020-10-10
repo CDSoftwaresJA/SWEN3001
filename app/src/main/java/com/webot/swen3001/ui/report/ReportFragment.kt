@@ -12,18 +12,13 @@ import com.webot.swen3001.R
 
 class ReportFragment : Fragment() {
 
-  private lateinit var reportViewModel: ReportViewModel
 
   override fun onCreateView(
     inflater: LayoutInflater,
     container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View? {
-    reportViewModel =
-    ViewModelProviders.of(this).get(ReportViewModel::class.java)
     val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
-    reportViewModel.text.observe(viewLifecycleOwner, Observer {
-    })
     return root
   }
 }
