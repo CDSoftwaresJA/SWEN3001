@@ -52,7 +52,6 @@
                 android:layout_height="87dp"
                 android:layout_marginTop="122dp"
                 android:layout_marginBottom="517dp"
-                android:clickable="true"
                 app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="25dp"
                 app:cardElevation="10dp"
@@ -107,6 +106,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/requestTestCard"
                 android:layout_width="336dp"
                 android:layout_height="125dp"
                 android:layout_marginTop="230dp"

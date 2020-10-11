@@ -29,6 +29,14 @@ class HomeFragment : Fragment() {
       startActivity(dialIntent)
     }
 
+    val requestTestCard: View = rootView.findViewById(R.id.requestTestCard)
+    requestTestCard.setOnClickListener {
+      val requestTestIntent = Intent(Intent.ACTION_VIEW)
+      val url: String = "https://jamcovid19.moh.gov.jm/report-yourself.html"
+      requestTestIntent.data = Uri.parse(url)
+      startActivity(requestTestIntent)
+    }
+
     return rootView
 
   }

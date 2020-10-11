@@ -6,9 +6,9 @@
 >>>>>>>> HEAD
     <string name="home_broadcast">Broadcast</string>
     <string name="home_question">What should you do if you are sick?</string>
-    <string name="home_card1_text">Call 911 immediately if you are having a medical emergency.</string>
+    <string name="home_card1_text">Tap to dial 119 if you are having a medical emergency.</string>
     <string name="home_card2_title">Request a test.</string>
-    <string name="home_card2_text">If you are experiencing symptoms and want to get tested.</string>
+    <string name="home_card2_text">Tap if you are experiencing symptoms and want to get tested.</string>
     <string name="home_telephone">Telephone Icon</string>
     <string name="home_thermometer">Thermometer Icon</string>
     <string name="home_cdcLogo">CDC Logo</string>
