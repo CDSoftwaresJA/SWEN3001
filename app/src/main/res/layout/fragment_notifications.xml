@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".ui.report.ReportFragment">
+    tools:context=".ui.profile.ProfileFragment">
 
     <LinearLayout
         android:orientation="vertical"
@@ -30,8 +30,13 @@
             android:textSize="25sp" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/mystatus_card"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="50dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
+            >
 
             <TextView
                 android:id="@+id/textView11"
@@ -70,8 +75,12 @@
                 android:textSize="25sp" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/expNotifications_card"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="50dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground">
 
             <TextView
                 android:id="@+id/textView7"
