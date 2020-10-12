@@ -13,7 +13,7 @@
     <string name="home_thermometer">Thermometer Icon</string>
     <string name="home_cdcLogo">CDC Logo</string>
     <string name="home_resources">Resources</string>
-    <string name="home_cdcText">CDC Guidance</string>
+    <string name="home_cdcText">CDC Guidelines</string>
 =======
     <string name="new_report">+ New Report</string>
     <string name="report_info">Help your community by reporting your diagnosis</string>

@@ -29,12 +29,22 @@ class HomeFragment : Fragment() {
       startActivity(dialIntent)
     }
 
+    //Adding event listener to the second card of the home screen
     val requestTestCard: View = rootView.findViewById(R.id.requestTestCard)
     requestTestCard.setOnClickListener {
       val requestTestIntent = Intent(Intent.ACTION_VIEW)
       val url: String = "https://jamcovid19.moh.gov.jm/report-yourself.html"
       requestTestIntent.data = Uri.parse(url)
       startActivity(requestTestIntent)
+    }
+
+    //Adding event listener to the third card of the home screen
+    val cdcGuidelinesCard: View = rootView.findViewById(R.id.cdcGuidelinesCard)
+    cdcGuidelinesCard.setOnClickListener {
+      val cdcIntent = Intent(Intent.ACTION_VIEW)
+      val url: String = "https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/prevention.html"
+      cdcIntent.data = Uri.parse(url)
+      startActivity(cdcIntent)
     }
 
     return rootView
