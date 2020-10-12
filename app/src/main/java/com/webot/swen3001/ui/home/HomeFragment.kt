@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.material.switchmaterial.SwitchMaterial
 import com.webot.swen3001.R
+import es.dmoral.toasty.Toasty
 
 class HomeFragment : Fragment() {
 
@@ -50,7 +51,7 @@ class HomeFragment : Fragment() {
     val broadcastSwitch = rootView.findViewById<SwitchMaterial>(R.id.broadcastSwitch)
     broadcastSwitch?.setOnCheckedChangeListener { _, isChecked ->
       val msg: String = if (isChecked) "Broadcasting turned on" else "Broadcasting turned off"
-      Toast.makeText(this.activity, msg, Toast.LENGTH_SHORT).show()
+      Toasty.success(requireContext(), msg, Toast.LENGTH_SHORT).show()
     }
 
     return rootView
