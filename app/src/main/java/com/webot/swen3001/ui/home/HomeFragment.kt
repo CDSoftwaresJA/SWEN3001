@@ -6,10 +6,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.cardview.widget.CardView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.android.material.switchmaterial.SwitchMaterial
 import com.webot.swen3001.R
-import kotlinx.android.synthetic.main.fragment_home.*
+import es.dmoral.toasty.Toasty
 
 class HomeFragment : Fragment() {
 
@@ -33,7 +34,7 @@ class HomeFragment : Fragment() {
     val requestTestCard: View = rootView.findViewById(R.id.requestTestCard)
     requestTestCard.setOnClickListener {
       val requestTestIntent = Intent(Intent.ACTION_VIEW)
-      val url: String = "https://jamcovid19.moh.gov.jm/report-yourself.html"
+      val url = "https://jamcovid19.moh.gov.jm/report-yourself.html"
       requestTestIntent.data = Uri.parse(url)
       startActivity(requestTestIntent)
     }
@@ -42,9 +43,15 @@ class HomeFragment : Fragment() {
     val cdcGuidelinesCard: View = rootView.findViewById(R.id.cdcGuidelinesCard)
     cdcGuidelinesCard.setOnClickListener {
       val cdcIntent = Intent(Intent.ACTION_VIEW)
-      val url: String = "https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/prevention.html"
+      val url = "https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/prevention.html"
       cdcIntent.data = Uri.parse(url)
       startActivity(cdcIntent)
+    }
+
+    val broadcastSwitch = rootView.findViewById<SwitchMaterial>(R.id.broadcastSwitch)
+    broadcastSwitch?.setOnCheckedChangeListener { _, isChecked ->
+      val msg: String = if (isChecked) "Broadcasting turned on" else "Broadcasting turned off"
+      Toasty.success(requireContext(), msg, Toast.LENGTH_SHORT).show()
     }
 
     return rootView
