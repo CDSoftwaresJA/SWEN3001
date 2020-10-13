@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
@@ -27,13 +28,19 @@ class StatisticsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         webView2.webViewClient = WebViewClient()
+
         webView2.apply {
-            loadUrl("https://www.moh.gov.jm/updates/press-releases/")
+            loadUrl("https://jamcovid19.moh.gov.jm?=rel")
             settings.javaScriptEnabled = true
             settings.allowContentAccess = true
             settings.domStorageEnabled = true
             settings.useWideViewPort = true
+
+
         }
+
+
+
 
 
 
