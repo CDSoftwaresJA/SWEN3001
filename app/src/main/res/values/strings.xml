@@ -38,6 +38,9 @@
     <string name="change_stat_switch">Negative ></string>
     <string name="my_status">My Status</string>
     <string name="exposures2">EXPOSURES IN PAST 14 DAYS</string>
+    <string name="possible_exposure">Possible Exposure</string>
+    <string name="exp_date">April 23, 2020</string>
+
 
 
     // -----------------UPDATE STATUS -----------------
