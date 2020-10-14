@@ -2,7 +2,7 @@
     <string name="app_name">BlueTrace</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Health Report</string>
-    <string name="title_notifications">Profile</string>
+    <string name="title_notifications">Status</string>
     >>>>>>>> HEAD
     <string name="home_broadcast">Broadcast</string>
     <string name="home_question">What should you do if you are sick?</string>
@@ -17,6 +17,9 @@
     =======
     <string name="new_report">+ New Report</string>
     <string name="report_info">Log your symptoms here</string>
+    <string name="history">Your past symptoms:</string>
+    <string name="dummyval1">Cough, Fever</string>
+    <string name="dummyVal2">October 09, 2020</string>
 
     <string name="checkSymptomsHeader">COVID-19 Symptom Check</string>
     <string name="checkSymptomsPrompt">Check the symptoms that you are currently experiencing:</string>
