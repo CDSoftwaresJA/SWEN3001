@@ -3,5 +3,20 @@
     <Preference
         android:title="Twitter"
         android:summary="Test Summary"/>
+    <Preference
+        android:title="Twitter"
+        android:summary="Test Summary"/>
+    <Preference
+        android:title="Twitter"
+        android:summary="Test Summary"/>
+    <Preference
+        android:title="Twitter"
+        android:summary="Test Summary"/>
+    <Preference
+        android:title="Twitter"
+        android:summary="Test Summary"/>
+    <Preference
+        android:title="Twitter"
+        android:summary="Test Summary"/>
 
 </androidx.preference.PreferenceScreen>
