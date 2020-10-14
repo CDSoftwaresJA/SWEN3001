@@ -8,15 +8,18 @@
     tools:context=".ExposureNotifications">
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/exposureOn_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:background="@drawable/update_status_activity"
         android:text="@string/exp_on" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/exposureOff_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/update_status_activity"
         android:text="@string/exp_off" />
 </LinearLayout>

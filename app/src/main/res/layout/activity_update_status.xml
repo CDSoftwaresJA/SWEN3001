@@ -8,15 +8,20 @@
     tools:context=".UpdateStatus">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/positivebtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:background="@drawable/update_status_activity"
         android:text="@string/positive" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/negativebtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/update_status_activity"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:text="@string/negative" />
 </LinearLayout>
