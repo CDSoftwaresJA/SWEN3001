@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.SymptomsActivity"></activity>
+        <activity android:name=".ui.SymptomsActivity"/>
         <activity
             android:name=".ui.SplashActivity"
             android:label="BlueTrace"
@@ -25,7 +25,8 @@
         </activity>
         <activity android:name=".ExposureNotifications" />
         <activity android:name=".UpdateStatus" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".ui.SettingsActivity"/>
     </application>
 
 </manifest>
