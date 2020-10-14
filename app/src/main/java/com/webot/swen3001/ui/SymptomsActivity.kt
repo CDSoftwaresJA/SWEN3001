@@ -11,6 +11,8 @@ class SymptomsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_symptoms)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeButtonEnabled(true)
 
         val submitButton = findViewById<Button>(R.id.submitButton)
         submitButton.setOnClickListener {
@@ -18,4 +20,13 @@ class SymptomsActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return super.onSupportNavigateUp()
+    }
+
+
 }

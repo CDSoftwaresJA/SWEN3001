@@ -16,7 +16,7 @@
         android:title="Statistics" />
     <item
         android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_baseline_settings_24"
+        android:icon="@drawable/ic_baseline_person_24"
         android:title="Settings" />
 
 </menu>

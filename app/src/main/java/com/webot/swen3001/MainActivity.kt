@@ -2,6 +2,8 @@ package com.webot.swen3001
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +11,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.webot.swen3001.ui.SettingsActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+
         val appBarConfiguration = AppBarConfiguration(setOf(
             R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications,R.id.navigation_statistics))
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -28,5 +32,21 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.top_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_settings -> {
+                val intent = Intent(baseContext,SettingsActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
