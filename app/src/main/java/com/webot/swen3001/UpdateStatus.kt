@@ -17,6 +17,8 @@ import kotlinx.android.synthetic.main.fragment_notifications.*
 import org.w3c.dom.Text
 
 class UpdateStatus : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_status)

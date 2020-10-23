@@ -2,30 +2,38 @@ package com.webot.swen3001.ui.profile
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import android.view.inputmethod.InputBinding
+import androidx.lifecycle.ViewModelProvider
 import androidx.fragment.app.Fragment
 import com.webot.swen3001.ExposureNotifications
 import com.webot.swen3001.R
 import com.webot.swen3001.UpdateStatus
-import es.dmoral.toasty.Toasty
+import com.webot.swen3001.databinding.FragmentNotificationsBinding
 import kotlinx.android.synthetic.main.fragment_notifications.*
 
 class ProfileFragment : Fragment() {
 
+  private lateinit var viewModel: ProfileViewModel
 
-  override fun onCreateView(
-    inflater: LayoutInflater,
-    container: ViewGroup?,
-    savedInstanceState: Bundle?
-  ): View? {
+  private lateinit var binding: FragmentNotificationsBinding
 
 
+
+
+  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                            savedInstanceState: Bundle?): View? {
+
+
+    // binding = FragmentNotificationsBinding.inflate(layoutInflater)
     val rootView: View = inflater.inflate(R.layout.fragment_notifications, container, false)
+
+
+    Log.i("ProfileFragment", "Called ViewModelProvider.get")
+    viewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
 
     //Adding event listener to the Update Status Card on Profile Screen
     val updateStatusCard: View = rootView.findViewById(R.id.mystatus_card)
@@ -45,8 +53,9 @@ class ProfileFragment : Fragment() {
     val expNotificationsState: View = rootView.findViewById(R.id.expNotificationsState)
     fun setTextViewText(value: String){
       statusState.text = value
-    }*/
+    } */
 
     return rootView
+
   }
 }
