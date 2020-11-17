@@ -14,7 +14,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="450dp"
             app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="15dp"
             app:cardElevation="1dp"
@@ -24,143 +24,149 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/symptoms_checklist_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="12.5dp"
+                tools:listitem="@layout/symptoms_checklist_item"/>
 
-            <ScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+<!--            <ScrollView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content">-->
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:gravity="center">-->
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="300dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="25dp"
-                        app:cardBackgroundColor="#F2F1F1"
-                        app:cardCornerRadius="23dp"
-                        app:cardElevation="5dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="300dp"-->
+<!--                        android:layout_height="80dp"-->
+<!--                        android:layout_margin="25dp"-->
+<!--                        app:cardBackgroundColor="#F2F1F1"-->
+<!--                        app:cardCornerRadius="23dp"-->
+<!--                        app:cardElevation="5dp"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintHorizontal_bias="0.5"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent">-->
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+<!--                        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent">-->
 
-                            <CheckBox
-                                android:id="@+id/soreThroatCheckBox"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/checkSoreThroat"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.16"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+<!--                            <CheckBox-->
+<!--                                android:id="@+id/soreThroatCheckBox"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="@string/checkSoreThroat"-->
+<!--                                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                app:layout_constraintHorizontal_bias="0.16"-->
+<!--                                app:layout_constraintStart_toStartOf="parent"-->
+<!--                                app:layout_constraintTop_toTopOf="parent" />-->
 
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
+<!--                        </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--                    </androidx.cardview.widget.CardView>-->
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="300dp"
-                        android:layout_height="80dp"
-                        android:layout_marginBottom="25dp"
-                        app:cardBackgroundColor="#F2F1F1"
-                        app:cardCornerRadius="23dp"
-                        app:cardElevation="5dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="300dp"-->
+<!--                        android:layout_height="80dp"-->
+<!--                        android:layout_marginBottom="25dp"-->
+<!--                        app:cardBackgroundColor="#F2F1F1"-->
+<!--                        app:cardCornerRadius="23dp"-->
+<!--                        app:cardElevation="5dp"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintHorizontal_bias="0.5"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent">-->
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+<!--                        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent">-->
 
-                            <CheckBox
-                                android:id="@+id/feverCheckBox"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/checkFever"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.137"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+<!--                            <CheckBox-->
+<!--                                android:id="@+id/feverCheckBox"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="@string/checkFever"-->
+<!--                                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                app:layout_constraintHorizontal_bias="0.137"-->
+<!--                                app:layout_constraintStart_toStartOf="parent"-->
+<!--                                app:layout_constraintTop_toTopOf="parent" />-->
 
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
+<!--                        </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--                    </androidx.cardview.widget.CardView>-->
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="300dp"
-                        android:layout_height="80dp"
-                        android:layout_marginBottom="25dp"
-                        app:cardBackgroundColor="#F2F1F1"
-                        app:cardCornerRadius="23dp"
-                        app:cardElevation="5dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="300dp"-->
+<!--                        android:layout_height="80dp"-->
+<!--                        android:layout_marginBottom="25dp"-->
+<!--                        app:cardBackgroundColor="#F2F1F1"-->
+<!--                        app:cardCornerRadius="23dp"-->
+<!--                        app:cardElevation="5dp"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintHorizontal_bias="0.5"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent">-->
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+<!--                        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent">-->
 
-                            <CheckBox
-                                android:id="@+id/nasalCongestionCheckBox"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/checkNasalCongestion"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.208"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+<!--                            <CheckBox-->
+<!--                                android:id="@+id/nasalCongestionCheckBox"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="@string/checkNasalCongestion"-->
+<!--                                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                app:layout_constraintHorizontal_bias="0.208"-->
+<!--                                app:layout_constraintStart_toStartOf="parent"-->
+<!--                                app:layout_constraintTop_toTopOf="parent" />-->
 
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
+<!--                        </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--                    </androidx.cardview.widget.CardView>-->
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="300dp"
-                        android:layout_height="80dp"
-                        android:layout_marginBottom="25dp"
-                        app:cardBackgroundColor="#F2F1F1"
-                        app:cardCornerRadius="23dp"
-                        app:cardElevation="5dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="300dp"-->
+<!--                        android:layout_height="80dp"-->
+<!--                        android:layout_marginBottom="25dp"-->
+<!--                        app:cardBackgroundColor="#F2F1F1"-->
+<!--                        app:cardCornerRadius="23dp"-->
+<!--                        app:cardElevation="5dp"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintHorizontal_bias="0.5"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent">-->
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+<!--                        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent">-->
 
-                            <CheckBox
-                                android:id="@+id/coughCheckBox"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/checkCough"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.149"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+<!--                            <CheckBox-->
+<!--                                android:id="@+id/coughCheckBox"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="@string/checkCough"-->
+<!--                                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                app:layout_constraintHorizontal_bias="0.149"-->
+<!--                                app:layout_constraintStart_toStartOf="parent"-->
+<!--                                app:layout_constraintTop_toTopOf="parent" />-->
 
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
+<!--                        </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--                    </androidx.cardview.widget.CardView>-->
 
-                </LinearLayout>
-            </ScrollView>
+<!--                </LinearLayout>-->
+<!--            </ScrollView>-->
         </androidx.cardview.widget.CardView>
 
         <Button
