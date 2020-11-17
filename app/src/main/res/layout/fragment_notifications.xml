@@ -134,7 +134,7 @@
             android:id="@+id/exposuresRecyclerView"
             />
 
-     
+
 
     </LinearLayout>
 </ScrollView>
