@@ -4,8 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.webot.swen3001.MainActivity
 import com.webot.swen3001.R
+import kotlinx.android.synthetic.main.activity_symptoms.*
 
 class SymptomsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,6 +15,10 @@ class SymptomsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_symptoms)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
+
+        symptoms_checklist_recycler_view.adapter = SymptomsChecklistAdapter()
+        symptoms_checklist_recycler_view.layoutManager = LinearLayoutManager(this)
+        symptoms_checklist_recycler_view.setHasFixedSize(true)
 
         val submitButton = findViewById<Button>(R.id.submitButton)
         submitButton.setOnClickListener {
