@@ -2,7 +2,7 @@ package com.webot.swen3001
 
 import com.orhanobut.hawk.Hawk
 
-class Utils {
+object Utils {
     fun updateStatus(number:String){
         Hawk.put("status",number)
     }

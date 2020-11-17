@@ -9,8 +9,8 @@ class ProfileViewModel : ViewModel() {
     }
 
 
-    /*override fun onCleared() {
+    override fun onCleared() {
         super.onCleared()
         Log.i("ProfileViewModel", "ProfileViewModel destroyed!")
-    }*/
+    }
 }

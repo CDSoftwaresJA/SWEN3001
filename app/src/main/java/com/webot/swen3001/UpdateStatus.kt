@@ -2,41 +2,40 @@ package com.webot.swen3001
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.webot.swen3001.ui.profile.ProfileFragment
+import androidx.lifecycle.ViewModelProvider
+import com.webot.swen3001.Utils.updateStatus
+import com.webot.swen3001.ui.profile.ProfileViewModel
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_notifications.*
-import org.w3c.dom.Text
 
 class UpdateStatus : AppCompatActivity() {
+
+    // var fragment = supportFragmentManager.findFragmentById(R.id.navigation_notifications)
+    // private lateinit var viewModel: ProfileViewModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_status)
 
+        // viewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
 
-        //change the users status to positive or negative
+        //CHANGE THE USERS STATUS TO POSITIVE OR NEGATIVE
         val positive_btn = findViewById<Button>(R.id.positivebtn)
         val negative_btn = findViewById<Button>(R.id.negativebtn)
 
 
         positive_btn.setOnClickListener {
+            updateStatus("1")
             Toasty.success(this, "Status changed to Positive", Toast.LENGTH_SHORT).show()
-
             }
 
         negative_btn.setOnClickListener {
+            updateStatus("0")
             Toasty.success(this, "Status changed to Negative", Toast.LENGTH_SHORT).show()
             }
-
     }
 }
