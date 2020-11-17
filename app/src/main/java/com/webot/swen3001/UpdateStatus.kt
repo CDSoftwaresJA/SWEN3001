@@ -20,6 +20,9 @@ class UpdateStatus : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_status)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setTitle("Update Status")
 
         // viewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
 
@@ -31,11 +34,13 @@ class UpdateStatus : AppCompatActivity() {
         positive_btn.setOnClickListener {
             updateStatus("1")
             Toasty.success(this, "Status changed to Positive", Toast.LENGTH_SHORT).show()
+            finish()
             }
 
         negative_btn.setOnClickListener {
             updateStatus("0")
-            Toasty.success(this, "Status changed to Negative", Toast.LENGTH_SHORT).show()
+            Toasty.error(this, "Status changed to Negative", Toast.LENGTH_SHORT).show()
+            finish()
             }
     }
 }

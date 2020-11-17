@@ -10,6 +10,9 @@ class ExposureNotifications : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exposure_notifications)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setTitle("Exposure Notifications")
 
 
         //TURN EXPOSURE NOTIFICATIONS ON OR OFF
@@ -20,11 +23,21 @@ class ExposureNotifications : AppCompatActivity() {
         exposureOnBtn.setOnClickListener {
             Utils.updateNotification(1)
             Toasty.success(this, "Exposure Notifications Are Now On", Toast.LENGTH_SHORT).show()
+            finish()
         }
 
         exposureOffBtn.setOnClickListener {
             Utils.updateNotification(0)
-            Toasty.success(this, "Exposure Notifications Are Now Off", Toast.LENGTH_SHORT).show()
+            Toasty.error(this, "Exposure Notifications Are Now Off", Toast.LENGTH_SHORT).show()
+            finish()
         }
+
+
+
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return super.onSupportNavigateUp()
     }
 }
