@@ -2,6 +2,7 @@ package com.webot.swen3001.ui.report
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,12 +13,17 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
+import com.webot.swen3001.AppDatabase
 import com.webot.swen3001.MainActivity
 import com.webot.swen3001.R
+import com.webot.swen3001.models.ExposureLog
 import com.webot.swen3001.ui.SymptomsActivity
 import com.webot.swen3001.ui.SymptomsChecklistAdapter
 import com.webot.swen3001.ui.SymptomsListAdapter
+import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_dashboard.*
+import kotlin.concurrent.thread
 
 class ReportFragment : Fragment() {
 
@@ -28,6 +34,22 @@ class ReportFragment : Fragment() {
     savedInstanceState: Bundle?
   ): View? {
     val rootView = inflater.inflate(R.layout.fragment_dashboard, container, false)
+
+    thread {
+      val db = Room.databaseBuilder(
+        requireContext(),
+        AppDatabase::class.java, "tracer"
+      ).build()
+      //db.queries().insertAll(ExposureLog(0,"Test Date","1,0,1,0,1,0,1,0,1,0"))
+      val arr =       db.queries().loadLogs()
+      for (log in arr){
+        Log.d("Symptoms: ","${log.symptoms}")
+      }
+
+
+    }
+
+
 
     rootView.findViewById<RecyclerView>(R.id.symptoms_list_recycler_view).adapter = SymptomsListAdapter()
     rootView.findViewById<RecyclerView>(R.id.symptoms_list_recycler_view).layoutManager = LinearLayoutManager(context)
