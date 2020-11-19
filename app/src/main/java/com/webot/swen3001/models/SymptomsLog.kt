@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class ExposureLog(
+data class SymptomsLog(
     @PrimaryKey(autoGenerate = true) var id: Int,
     var date: String?,
     var symptoms: String?
