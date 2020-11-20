@@ -16,9 +16,10 @@ class SymptomsActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
 
-        symptoms_checklist_recycler_view.adapter = SymptomsChecklistAdapter()
-        symptoms_checklist_recycler_view.layoutManager = LinearLayoutManager(this)
-        symptoms_checklist_recycler_view.setHasFixedSize(true)
+        symptoms_checklist_list_view.adapter = SymptomsChecklistAdapter(this)
+//        symptoms_checklist_list_view.onItemClickListener
+//        symptoms_checklist_recycler_view.layoutManager = LinearLayoutManager(this)
+//        symptoms_checklist_recycler_view.setHasFixedSize(true)
 
         val submitButton = findViewById<Button>(R.id.submitButton)
         submitButton.setOnClickListener {
