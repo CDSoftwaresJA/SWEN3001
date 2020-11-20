@@ -13,7 +13,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
-            android:layout_width="wrap_content"
+            android:layout_width="355dp"
             android:layout_height="450dp"
             app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="15dp"
@@ -24,12 +24,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/symptoms_checklist_recycler_view"
-                android:layout_width="match_parent"
+
+            <ListView
+                android:id="@+id/symptoms_checklist_list_view"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_margin="12.5dp"
-                tools:listitem="@layout/symptoms_checklist_item"/>
+                android:layout_margin="10dp"
+                android:padding="14dp"
+                android:divider="@null"
+                android:dividerHeight="12.5dp"
+                tools:listitem="@layout/symptoms_checklist_item" />
 
 <!--            <ScrollView-->
 <!--                android:layout_width="wrap_content"-->
