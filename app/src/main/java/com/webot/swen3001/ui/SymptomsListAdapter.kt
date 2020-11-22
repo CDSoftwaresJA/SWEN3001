@@ -7,17 +7,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.webot.swen3001.R
 import kotlinx.android.synthetic.main.symptoms_list_item.view.*
+import java.lang.reflect.Array
 
-class SymptomsListAdapter : RecyclerView.Adapter<SymptomsListAdapter.SymptomsListViewHolder>() {
+class SymptomsListAdapter(private val array : ArrayList<SymptomsListItem>) : RecyclerView.Adapter<SymptomsListAdapter.SymptomsListViewHolder>() {
 
-    private val dummyDataList = ArrayList<SymptomsListItem>()
+    private var dummyDataList = ArrayList<SymptomsListItem>()
 
     init {
-        var dummyData1 = SymptomsListItem("Cough, Fever", "October 09, 2020")
-        var dummyData2 = SymptomsListItem("Sore Through, Nausea", "November 01, 2020")
-
-        dummyDataList += dummyData1
-        dummyDataList += dummyData2
+        dummyDataList = array
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SymptomsListViewHolder {

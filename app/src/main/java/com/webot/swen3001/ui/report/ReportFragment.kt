@@ -13,8 +13,10 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 import com.webot.swen3001.AppDatabase
 import com.webot.swen3001.R
+import com.webot.swen3001.models.SymptomsLog
 import com.webot.swen3001.ui.SymptomsActivity
 import com.webot.swen3001.ui.SymptomsListAdapter
+import com.webot.swen3001.ui.SymptomsListItem
 import kotlin.concurrent.thread
 
 class ReportFragment : Fragment() {
@@ -28,6 +30,8 @@ class ReportFragment : Fragment() {
     val rootView = inflater.inflate(R.layout.fragment_dashboard, container, false)
 
     thread {
+      var dataList = ArrayList<SymptomsListItem>()
+
       val db = Room.databaseBuilder(
         requireContext(),
         AppDatabase::class.java, "tracer"
@@ -35,17 +39,27 @@ class ReportFragment : Fragment() {
       //db.queries().insertAll(SymptomsLog(0,"Test Date","1,0,1,0,1,0,1,0,1,0"))
       val arr =       db.queries().loadLogs()
       for (log in arr){
-        Log.d("Symptoms: ","${log.symptoms}")
+        var data = SymptomsListItem(log.symptoms, log.date)
+        dataList.add(data)
+        Log.d("Symptoms: ", "${log.symptoms}")
+
       }
+      requireActivity().runOnUiThread {
+        val view:RecyclerView = rootView.findViewById<RecyclerView>(R.id.symptoms_list_recycler_view)
+        view.adapter = SymptomsListAdapter(
+          dataList
+        )
+        view.layoutManager = LinearLayoutManager(
+          context
+        )
+        view.setHasFixedSize(true)
 
-
+      }
     }
 
+    var dummyData1 = SymptomsListItem("Cough, Fever", "October 09, 2020")
+    var dummyData2 = SymptomsListItem("Sore Through, Nausea", "November 01, 2020")
 
-
-    rootView.findViewById<RecyclerView>(R.id.symptoms_list_recycler_view).adapter = SymptomsListAdapter()
-    rootView.findViewById<RecyclerView>(R.id.symptoms_list_recycler_view).layoutManager = LinearLayoutManager(context)
-    rootView.findViewById<RecyclerView>(R.id.symptoms_list_recycler_view).setHasFixedSize(true)
 
     val submitButton = rootView.findViewById<Button>(R.id.add_reportbtn)
     submitButton.setOnClickListener {
