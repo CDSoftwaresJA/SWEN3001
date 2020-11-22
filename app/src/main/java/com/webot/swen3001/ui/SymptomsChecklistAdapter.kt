@@ -7,18 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.CheckBox
+import androidx.cardview.widget.CardView
 import com.webot.swen3001.R
 import kotlinx.android.synthetic.main.symptoms_checklist_item.view.*
 
 class SymptomsChecklistAdapter(context: Context) : BaseAdapter() {
 
     private var symptomsList = listOf<String>()
-    private var mContext: Context
-//    private lateinit var itemView: View
+    private var checkBoxListState = mutableListOf<Boolean>()
+    private var mContext = context
 
     init {
-        mContext = context
-
         symptomsList += "Sore Throat"
         symptomsList += "Fever"
         symptomsList += "Nasal Congestion"
@@ -32,6 +31,10 @@ class SymptomsChecklistAdapter(context: Context) : BaseAdapter() {
         symptomsList += "Chest Pain"
         symptomsList += "Diarrhea"
         symptomsList += "Abdominal Pain"
+
+        for(symptom in symptomsList) {
+            checkBoxListState.plusAssign(false)
+        }
     }
 
     override fun getCount() = symptomsList.size
@@ -46,48 +49,49 @@ class SymptomsChecklistAdapter(context: Context) : BaseAdapter() {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val symptom = getItem(position) as String
-
         val itemView = LayoutInflater.from(mContext).inflate(R.layout.symptoms_checklist_item, parent, false)
-//        itemView.setOnClickListener(this)
+        val checkBox = itemView.CheckBox
+        val cardView = itemView.cardView
 
-        val checkBox: CheckBox = itemView.CheckBox
         checkBox.text = symptom
+        setCheckBoxState(cardView, checkBox, position)
+
+        fun onClick() {
+            if(!checkBoxListState[position]) {
+                cardView.setCardBackgroundColor(Color.parseColor("#0394F3"))
+                checkBox.setTextColor(Color.WHITE)
+                checkBoxListState[position] = true
+            } else {
+                cardView.setCardBackgroundColor(Color.parseColor("#F2F1F1"))
+                checkBox.setTextColor(Color.BLACK)
+                checkBoxListState[position] = false
+            }
+        }
+
+        checkBox.setOnClickListener(View.OnClickListener() {
+            onClick()
+//            Toast.makeText(mContext, "You Clicked:"+" "+symptom, Toast.LENGTH_SHORT).show()
+        })
+
+
+        cardView.setOnClickListener(View.OnClickListener {
+            onClick()
+            checkBox.isChecked = checkBoxListState[position]
+//            Toast.makeText(mContext, "You Clicked:"+" "+symptom, Toast.LENGTH_SHORT).show()
+        })
+
         return itemView
     }
 
-//    override fun onClick(v: View?) {
-//        if (itemView.CheckBox.isChecked) {
-//            itemView.cardView.setCardBackgroundColor(Color.parseColor("#F2F1F1"))
-//            itemView.CheckBox.setTextColor(Color.BLACK)
-//            itemView.CheckBox.isChecked = false
-//        } else {
-//            itemView.cardView.setCardBackgroundColor(Color.parseColor("#0394F3"))
-//            itemView.CheckBox.setTextColor(Color.WHITE)
-//            itemView.CheckBox.isChecked = true
-//        }
-//    }
-    //    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SymptomsChecklistViewHolder {
-//        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.symptoms_checklist_item,
-//        parent, false)
-//        return SymptomsChecklistViewHolder(itemView)
-//    }
-//
-//    override fun onBindViewHolder(holder: SymptomsChecklistViewHolder, position: Int) {
-//        val currentItem = symptomsList[position]
-//        holder.checkBox.text = currentItem
-//    }
-//
-//    override fun getItemCount() = symptomsList.size
-//
-//    class SymptomsChecklistViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
-//        val checkBox: CheckBox = itemView.CheckBox
-//
-//
-//        init {
-//            itemView.setOnClickListener(this)
-//        }
-//
-
-//        }
-//    }
+    private fun setCheckBoxState(cardView: CardView, checkBox: CheckBox, position: Int) {
+        if(checkBoxListState[position]) {
+            cardView.setCardBackgroundColor(Color.parseColor("#0394F3"))
+            checkBox.setTextColor(Color.WHITE)
+            checkBox.isChecked = true
+        } else {
+            cardView.setCardBackgroundColor(Color.parseColor("#F2F1F1"))
+            checkBox.setTextColor(Color.BLACK)
+            checkBox.isChecked = false
+        }
+    }
 }
