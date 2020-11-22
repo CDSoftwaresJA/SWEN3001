@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.webot.swen3001.MainActivity
 import com.webot.swen3001.R
+import kotlinx.android.synthetic.main.activity_symptoms.*
 
 class SymptomsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,6 +14,10 @@ class SymptomsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_symptoms)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
+
+        val listView = symptoms_checklist_list_view
+        val adapter = SymptomsChecklistAdapter(this)
+        listView.adapter = adapter
 
         val submitButton = findViewById<Button>(R.id.submitButton)
         submitButton.setOnClickListener {
