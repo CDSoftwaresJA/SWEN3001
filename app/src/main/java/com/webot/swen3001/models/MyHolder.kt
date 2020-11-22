@@ -1,4 +1,4 @@
-package com.webot.swen3001.model
+package com.webot.swen3001.models
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

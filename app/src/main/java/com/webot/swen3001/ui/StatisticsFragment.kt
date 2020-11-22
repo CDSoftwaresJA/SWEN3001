@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.GsonBuilder
 import com.webot.swen3001.R
-import com.webot.swen3001.model.MyAdapter
-import com.webot.swen3001.model.RequestDataItem
+import com.webot.swen3001.models.MyAdapter
+import com.webot.swen3001.models.RequestDataItem
 
 
 import kotlinx.android.synthetic.main.recycler_view_fragment.*
@@ -45,7 +45,6 @@ class StatisticsFragment : Fragment() {
 
 
     fun fetchJson(){
-        println("HEEDDDDDDDDDDDD")
 
         val url2="https://api.covid19api.com/dayone/country/jamaica"
         val request = Request.Builder().url(url2).build()
@@ -61,7 +60,7 @@ class StatisticsFragment : Fragment() {
                 val data = gson.fromJson(body,Array<RequestDataItem>::class.java)
 
                 requireActivity().runOnUiThread {
-                    my_recycler.adapter=MyAdapter(data)
+                    my_recycler.adapter= MyAdapter(data)
                 }
 
             }

@@ -1,4 +1,4 @@
-package com.webot.swen3001.model
+package com.webot.swen3001.models
 
 
 import com.google.gson.annotations.SerializedName

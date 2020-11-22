@@ -1,4 +1,4 @@
-package com.webot.swen3001.model
+package com.webot.swen3001.models
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.webot.swen3001.R
 import kotlinx.android.synthetic.main.item_view.view.*
-import java.util.*
-import kotlin.Comparator
 
 
 class MyAdapter(private val data: Array<RequestDataItem>): RecyclerView.Adapter<MyHolder>() {
