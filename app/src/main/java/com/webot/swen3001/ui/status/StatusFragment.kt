@@ -44,7 +44,7 @@ class StatusFragment : Fragment() {
               AppDatabase::class.java, "tracer"
           ).build()
 
-          db.queriesExposure().insertExposureLogs(Exposures(0,"Test Date","20m"))
+//          db.queriesExposure().insertExposureLogs(Exposures(0,"Test Date","20m"))
 
 
           val arr =       db.queriesExposure().loadExposureLogs()
