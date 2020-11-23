@@ -1,4 +1,6 @@
-package com.webot.swen3001.ui
+package com.webot.swen3001.adapter
+
+import com.webot.swen3001.models.SymptomsListItem
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,9 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.webot.swen3001.R
 import kotlinx.android.synthetic.main.symptoms_list_item.view.*
-import java.lang.reflect.Array
 
-class SymptomsListAdapter(private val array : ArrayList<SymptomsListItem>) : RecyclerView.Adapter<SymptomsListAdapter.SymptomsListViewHolder>() {
+class ExposuresAdapter(private val array : ArrayList<SymptomsListItem>) : RecyclerView.Adapter<ExposuresAdapter.ListViewHolder>() {
 
     private var dummyDataList = ArrayList<SymptomsListItem>()
 
@@ -17,14 +18,14 @@ class SymptomsListAdapter(private val array : ArrayList<SymptomsListItem>) : Rec
         dummyDataList = array
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SymptomsListViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
             R.layout.symptoms_list_item,
             parent, false)
-        return SymptomsListViewHolder(itemView)
+        return ListViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: SymptomsListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val currentItem = dummyDataList[position]
         holder.symptoms.text = currentItem.symptoms
         holder.date.text = currentItem.date
@@ -32,7 +33,7 @@ class SymptomsListAdapter(private val array : ArrayList<SymptomsListItem>) : Rec
 
     override fun getItemCount() = dummyDataList.size
 
-    class SymptomsListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val symptoms: TextView = itemView.symptoms
         val date: TextView = itemView.date
     }

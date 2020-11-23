@@ -1,9 +1,9 @@
-package com.webot.swen3001.ui.profile
+package com.webot.swen3001.ui.status
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 
-class ProfileViewModel : ViewModel() {
+class StatusViewModel : ViewModel() {
     init {
         Log.i("ProfileViewModel", "ProfileViewModel created!")
     }

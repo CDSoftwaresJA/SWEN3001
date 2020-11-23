@@ -1,4 +1,4 @@
-package com.webot.swen3001.ui
+package com.webot.swen3001.adapter
 
 import android.content.Context
 import android.graphics.Color

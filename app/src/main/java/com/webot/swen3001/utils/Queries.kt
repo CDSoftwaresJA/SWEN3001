@@ -1,4 +1,4 @@
-package com.webot.swen3001
+package com.webot.swen3001.utils
 
 import androidx.room.Dao
 import androidx.room.Insert

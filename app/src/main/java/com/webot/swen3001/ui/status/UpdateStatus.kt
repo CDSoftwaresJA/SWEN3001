@@ -1,15 +1,12 @@
-package com.webot.swen3001
+package com.webot.swen3001.ui.status
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
-import com.webot.swen3001.Utils.updateStatus
-import com.webot.swen3001.ui.profile.ProfileViewModel
+import com.webot.swen3001.R
+import com.webot.swen3001.utils.Utils.updateStatus
 import es.dmoral.toasty.Toasty
-import kotlinx.android.synthetic.main.fragment_notifications.*
 
 class UpdateStatus : AppCompatActivity() {
 

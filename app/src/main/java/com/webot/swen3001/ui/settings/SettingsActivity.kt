@@ -1,4 +1,4 @@
-package com.webot.swen3001.ui
+package com.webot.swen3001.ui.settings
 
 import com.webot.swen3001.R
 
@@ -15,7 +15,7 @@ class SettingsActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setTitle("Settings")
-        supportFragmentManager.beginTransaction().replace(R.id.settings_frame,SettingsFragment()).commit();
+        supportFragmentManager.beginTransaction().replace(R.id.settings_frame, SettingsFragment()).commit();
     }
 
     override fun onSupportNavigateUp(): Boolean {

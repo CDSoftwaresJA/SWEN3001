@@ -1,9 +1,11 @@
-package com.webot.swen3001
+package com.webot.swen3001.ui.status
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import com.webot.swen3001.R
+import com.webot.swen3001.utils.Utils
 import es.dmoral.toasty.Toasty
 
 class ExposureNotifications : AppCompatActivity() {

@@ -16,9 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.SymptomsActivity"/>
+        <activity android:name=".ui.symptoms.SymptomsActivity"/>
         <activity
-            android:name=".ui.SplashActivity"
+            android:name=".ui.splash.SplashActivity"
             android:label="BlueTrace"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -27,10 +27,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ExposureNotifications" />
-        <activity android:name=".UpdateStatus" />
+        <activity android:name=".ui.status.ExposureNotifications" />
+        <activity android:name=".ui.status.UpdateStatus" />
         <activity android:name=".MainActivity"/>
-        <activity android:name=".ui.SettingsActivity"/>
+        <activity android:name=".ui.settings.SettingsActivity"/>
     </application>
 
 </manifest>

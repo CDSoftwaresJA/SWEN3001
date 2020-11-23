@@ -11,12 +11,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
-import com.webot.swen3001.AppDatabase
+import com.webot.swen3001.utils.AppDatabase
 import com.webot.swen3001.R
-import com.webot.swen3001.models.SymptomsLog
-import com.webot.swen3001.ui.SymptomsActivity
-import com.webot.swen3001.ui.SymptomsListAdapter
-import com.webot.swen3001.ui.SymptomsListItem
+import com.webot.swen3001.ui.symptoms.SymptomsActivity
+import com.webot.swen3001.adapter.SymptomsListAdapter
+import com.webot.swen3001.models.SymptomsListItem
 import kotlin.concurrent.thread
 
 class ReportFragment : Fragment() {

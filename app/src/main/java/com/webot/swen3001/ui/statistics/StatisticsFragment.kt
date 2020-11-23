@@ -1,4 +1,4 @@
-package com.webot.swen3001.ui
+package com.webot.swen3001.ui.statistics
 
 
 import android.os.Bundle
@@ -62,6 +62,7 @@ class StatisticsFragment : Fragment() {
                 requireActivity().runOnUiThread {
                     my_recycler.adapter= MyAdapter(data)
                 }
+
 
             }
 

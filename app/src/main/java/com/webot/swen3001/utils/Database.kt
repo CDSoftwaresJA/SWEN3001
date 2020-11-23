@@ -1,4 +1,4 @@
-package com.webot.swen3001
+package com.webot.swen3001.utils
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

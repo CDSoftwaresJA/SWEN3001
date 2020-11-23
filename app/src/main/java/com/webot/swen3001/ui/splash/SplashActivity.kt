@@ -1,4 +1,4 @@
-package com.webot.swen3001.ui
+package com.webot.swen3001.ui.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

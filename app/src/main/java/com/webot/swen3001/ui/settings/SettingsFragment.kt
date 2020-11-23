@@ -1,4 +1,4 @@
-package com.webot.swen3001.ui
+package com.webot.swen3001.ui.settings
 
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat

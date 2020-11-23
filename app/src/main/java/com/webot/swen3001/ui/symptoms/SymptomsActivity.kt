@@ -1,4 +1,4 @@
-package com.webot.swen3001.ui
+package com.webot.swen3001.ui.symptoms
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.webot.swen3001.MainActivity
 import com.webot.swen3001.R
+import com.webot.swen3001.adapter.SymptomsChecklistAdapter
 import kotlinx.android.synthetic.main.activity_symptoms.*
 
 class SymptomsActivity : AppCompatActivity() {

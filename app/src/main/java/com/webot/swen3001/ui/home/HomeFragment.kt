@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.material.switchmaterial.SwitchMaterial
-import com.webot.swen3001.Exposure
+import com.webot.swen3001.utils.Exposure
 import com.webot.swen3001.R
 import es.dmoral.toasty.Toasty
 
@@ -22,7 +22,7 @@ class HomeFragment : Fragment() {
     savedInstanceState: Bundle?
   ): View? {
     val rootView: View = inflater.inflate(R.layout.fragment_home, container, false)
-    val exposure:Exposure = Exposure()
+    val exposure: Exposure = Exposure()
 
     //Adding event listener to the first card of the home screen
     val dial119Card: View = rootView.findViewById(R.id.dial119Card)

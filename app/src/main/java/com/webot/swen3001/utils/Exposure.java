@@ -1,4 +1,4 @@
-package com.webot.swen3001;
+package com.webot.swen3001.utils;
 
 // Java platform code that powers Love is Blue
 import android.bluetooth.BluetoothAdapter;
