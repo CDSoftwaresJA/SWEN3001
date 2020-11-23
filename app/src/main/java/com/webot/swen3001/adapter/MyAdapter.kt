@@ -1,10 +1,12 @@
-package com.webot.swen3001.models
+package com.webot.swen3001.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 import com.webot.swen3001.R
+import com.webot.swen3001.models.MyHolder
+import com.webot.swen3001.models.RequestDataItem
 import kotlinx.android.synthetic.main.item_view.view.*
 
 

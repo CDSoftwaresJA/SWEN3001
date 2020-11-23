@@ -1,18 +1,17 @@
 package com.webot.swen3001.adapter
 
-import com.webot.swen3001.models.SymptomsListItem
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.webot.swen3001.R
+import com.webot.swen3001.models.SymptomsLog
 import kotlinx.android.synthetic.main.symptoms_list_item.view.*
 
-class ExposuresAdapter(private val array : ArrayList<SymptomsListItem>) : RecyclerView.Adapter<ExposuresAdapter.ListViewHolder>() {
+class ExposuresAdapter(private val array : ArrayList<SymptomsLog>) : RecyclerView.Adapter<ExposuresAdapter.ListViewHolder>() {
 
-    private var dummyDataList = ArrayList<SymptomsListItem>()
+    private var dummyDataList = ArrayList<SymptomsLog>()
 
     init {
         dummyDataList = array

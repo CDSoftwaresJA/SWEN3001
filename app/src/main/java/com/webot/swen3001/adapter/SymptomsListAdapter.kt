@@ -6,12 +6,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.webot.swen3001.R
-import com.webot.swen3001.models.SymptomsListItem
+import com.webot.swen3001.models.SymptomsLog
 import kotlinx.android.synthetic.main.symptoms_list_item.view.*
 
-class SymptomsListAdapter(private val array : ArrayList<SymptomsListItem>) : RecyclerView.Adapter<SymptomsListAdapter.SymptomsListViewHolder>() {
+class SymptomsListAdapter(private val array : ArrayList<SymptomsLog>) : RecyclerView.Adapter<SymptomsListAdapter.SymptomsListViewHolder>() {
 
-    private var dummyDataList = ArrayList<SymptomsListItem>()
+    private var dummyDataList = ArrayList<SymptomsLog>()
 
     init {
         dummyDataList = array

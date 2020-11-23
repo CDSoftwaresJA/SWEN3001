@@ -15,7 +15,7 @@ import com.webot.swen3001.utils.AppDatabase
 import com.webot.swen3001.R
 import com.webot.swen3001.ui.symptoms.SymptomsActivity
 import com.webot.swen3001.adapter.SymptomsListAdapter
-import com.webot.swen3001.models.SymptomsListItem
+import com.webot.swen3001.models.SymptomsLog
 import kotlin.concurrent.thread
 
 class ReportFragment : Fragment() {
@@ -29,16 +29,16 @@ class ReportFragment : Fragment() {
     val rootView = inflater.inflate(R.layout.fragment_dashboard, container, false)
 
     thread {
-      var dataList = ArrayList<SymptomsListItem>()
+      var dataList = ArrayList<SymptomsLog>()
 
       val db = Room.databaseBuilder(
         requireContext(),
         AppDatabase::class.java, "tracer"
       ).build()
       //db.queries().insertAll(SymptomsLog(0,"Test Date","1,0,1,0,1,0,1,0,1,0"))
-      val arr =       db.queries().loadLogs()
+      val arr =       db.queries().loadSymptomsLogs()
       for (log in arr){
-        var data = SymptomsListItem(log.symptoms, log.date)
+        var data = SymptomsLog(0,log.symptoms, log.date)
         dataList.add(data)
         Log.d("Symptoms: ", "${log.symptoms}")
 
@@ -55,9 +55,6 @@ class ReportFragment : Fragment() {
 
       }
     }
-
-    var dummyData1 = SymptomsListItem("Cough, Fever", "October 09, 2020")
-    var dummyData2 = SymptomsListItem("Sore Through, Nausea", "November 01, 2020")
 
 
     val submitButton = rootView.findViewById<Button>(R.id.add_reportbtn)
