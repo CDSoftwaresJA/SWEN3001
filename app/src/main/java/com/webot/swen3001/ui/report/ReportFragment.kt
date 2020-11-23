@@ -36,7 +36,7 @@ class ReportFragment : Fragment() {
         AppDatabase::class.java, "tracer"
       ).build()
       //db.queries().insertAll(SymptomsLog(0,"Test Date","1,0,1,0,1,0,1,0,1,0"))
-      val arr =       db.queries().loadSymptomsLogs()
+      val arr =       db.queriesSymptoms().loadSymptomsLogs()
       for (log in arr){
         var data = SymptomsLog(0,log.symptoms, log.date)
         dataList.add(data)

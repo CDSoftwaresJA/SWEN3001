@@ -4,7 +4,7 @@ package com.webot.swen3001.utils;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import java.util.HashMap;
-public  class Exposure {
+public  class ExposureBluetooth {
 
     private BluetoothAdapter mBluetoothAdapter= BluetoothAdapter.getDefaultAdapter();;
     private BluetoothAdapter.LeScanCallback mLeScanCallback = new
