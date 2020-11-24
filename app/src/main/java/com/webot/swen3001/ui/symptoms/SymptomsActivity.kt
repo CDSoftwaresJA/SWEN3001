@@ -38,7 +38,7 @@ class SymptomsActivity : AppCompatActivity() {
             for (state in SymptomsChecklistAdapter.checkBoxListState){
                 i++
                 if (state){
-                    parseString+= SymptomsChecklistAdapter.symptomsList.get(i) +", "
+                    parseString+= SymptomsChecklistAdapter.symptomsList.get(i-1) +", "
                 }
             }
             val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
