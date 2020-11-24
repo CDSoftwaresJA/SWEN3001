@@ -13,10 +13,11 @@ import kotlinx.android.synthetic.main.symptoms_checklist_item.view.*
 
 class SymptomsChecklistAdapter(context: Context) : BaseAdapter() {
 
-    private var symptomsList = listOf<String>()
-    private var checkBoxListState = mutableListOf<Boolean>()
     private var mContext = context
-
+    companion object Objects {
+        var symptomsList = listOf<String>()
+        var checkBoxListState = mutableListOf<Boolean>()
+    }
     init {
         symptomsList += "Sore Throat"
         symptomsList += "Fever"
