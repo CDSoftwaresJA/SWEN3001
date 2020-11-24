@@ -7,6 +7,8 @@
     tools:context=".ui.report.ReportFragment">
 <androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
+    android:overScrollMode="never"
+
     android:layout_height="match_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -74,6 +76,8 @@
             android:id="@+id/symptoms_list_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="300dp"
+            android:overScrollMode="never"
+
             android:layout_margin="10dp"
             app:layout_constraintBottom_toTopOf="@+id/nav_view"
             app:layout_constraintHorizontal_bias="0.529"
