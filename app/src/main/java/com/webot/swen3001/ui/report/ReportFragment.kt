@@ -1,12 +1,15 @@
 package com.webot.swen3001.ui.report
 
 import android.content.Intent
+import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -44,6 +47,10 @@ class ReportFragment : Fragment() {
 
       }
       requireActivity().runOnUiThread {
+        val text:TextView = rootView.findViewById(R.id.textView15);
+        if (arr.isEmpty()){
+          text.visibility=GONE
+        }
         val view:RecyclerView = rootView.findViewById<RecyclerView>(R.id.symptoms_list_recycler_view)
         view.adapter = SymptomsListAdapter(
           dataList
