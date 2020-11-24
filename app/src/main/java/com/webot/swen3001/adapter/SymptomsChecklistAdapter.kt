@@ -14,10 +14,12 @@ import kotlinx.android.synthetic.main.symptoms_checklist_item.view.*
 class SymptomsChecklistAdapter(context: Context) : BaseAdapter() {
 
     private var mContext = context
+
     companion object Objects {
         var symptomsList = listOf<String>()
         var checkBoxListState = mutableListOf<Boolean>()
     }
+
     init {
         symptomsList += "Sore Throat"
         symptomsList += "Fever"
@@ -33,9 +35,7 @@ class SymptomsChecklistAdapter(context: Context) : BaseAdapter() {
         symptomsList += "Diarrhea"
         symptomsList += "Abdominal Pain"
 
-        for(symptom in symptomsList) {
-            checkBoxListState.plusAssign(false)
-        }
+        initializeStateList()
     }
 
     override fun getCount() = symptomsList.size
@@ -94,5 +94,32 @@ class SymptomsChecklistAdapter(context: Context) : BaseAdapter() {
             checkBox.setTextColor(Color.BLACK)
             checkBox.isChecked = false
         }
+    }
+
+    private fun initializeStateList() {
+        for(symptom in symptomsList) {
+            checkBoxListState.plusAssign(false)
+        }
+    }
+
+    private fun refreshStateList() {
+        for(index in symptomsList.indices) {
+            checkBoxListState[index] = false
+        }
+    }
+
+    fun getSelectedSymptoms(): String {
+        var selectedSymptoms: String = ""
+        for((index, state) in checkBoxListState.withIndex()) {
+            if(state) {
+                selectedSymptoms += if(selectedSymptoms.isEmpty()) {
+                    symptomsList[index]
+                } else {
+                    ", ${symptomsList[index]}"
+                }
+            }
+        }
+        refreshStateList()
+        return selectedSymptoms
     }
 }

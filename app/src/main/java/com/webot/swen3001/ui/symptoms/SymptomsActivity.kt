@@ -33,14 +33,7 @@ class SymptomsActivity : AppCompatActivity() {
         listView.adapter = adapter
         val submitButton = findViewById<Button>(R.id.submitButton)
         submitButton.setOnClickListener {
-            var parseString:String = ""
-            var i:Int=0
-            for (state in SymptomsChecklistAdapter.checkBoxListState){
-                i++
-                if (state){
-                    parseString+= SymptomsChecklistAdapter.symptomsList.get(i-1) +", "
-                }
-            }
+            var parseString: String = adapter.getSelectedSymptoms()
             val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
             val currentDate = sdf.format(Date())
             if (parseString.isEmpty()){
