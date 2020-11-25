@@ -57,12 +57,12 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <Spinner
-                    android:id="@+id/statusSpinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:entries="@array/statuses"
-                    android:textAlignment="textEnd"/>
+                <Switch
+                    android:layout_weight="1"
+                    android:id="@+id/status"
+                    android:height="100dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
             </LinearLayout>
 
@@ -119,12 +119,14 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <Spinner
-                    android:id="@+id/exposureSpinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:entries="@array/expNotif"
-                    android:textAlignment="textEnd"/>
+
+                <Switch
+                    android:layout_weight="1"
+                    android:id="@+id/exposure"
+                    android:height="100dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
 
             </LinearLayout>
 

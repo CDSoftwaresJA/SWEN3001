@@ -36,15 +36,11 @@ class StatisticsFragment : Fragment() {
 
         //my_recycler.setBackgroundColor(Color.BLUE)
         my_recycler.layoutManager = LinearLayoutManager(activity)
-
-
-
-
         fetchJson()
     }
 
 
-    fun fetchJson(){
+    private fun fetchJson(){
 
         val url2="https://api.covid19api.com/dayone/country/jamaica"
         val request = Request.Builder().url(url2).build()
@@ -52,18 +48,14 @@ class StatisticsFragment : Fragment() {
         client.newCall(request).enqueue(object: Callback{
 
             override fun onResponse(call: Call, response: Response) {
-
                 val body = response.body?.string()
                 println(body)
-
                 val gson= GsonBuilder().create()
                 val data = gson.fromJson(body,Array<RequestDataItem>::class.java)
-
                 requireActivity().runOnUiThread {
-                    my_recycler.adapter= MyAdapter(data)
+                    if (isAdded)
+                        my_recycler.adapter= MyAdapter(data)
                 }
-
-
             }
 
             override fun onFailure(call: Call, e: IOException) {

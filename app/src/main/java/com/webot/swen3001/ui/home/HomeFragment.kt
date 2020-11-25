@@ -22,7 +22,7 @@ class HomeFragment : Fragment() {
     savedInstanceState: Bundle?
   ): View? {
     val rootView: View = inflater.inflate(R.layout.fragment_home, container, false)
-    val exposure: ExposureBluetooth = ExposureBluetooth()
+    val exposure: ExposureBluetooth = ExposureBluetooth(requireContext())
 
     //Adding event listener to the first card of the home screen
     val dial119Card: View = rootView.findViewById(R.id.dial119Card)

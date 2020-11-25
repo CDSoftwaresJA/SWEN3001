@@ -1,14 +1,12 @@
 package com.webot.swen3001.ui.status
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
+import android.widget.CompoundButton
+import android.widget.Switch
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,12 +16,11 @@ import com.webot.swen3001.adapter.ExposuresAdapter
 import com.webot.swen3001.databinding.FragmentNotificationsBinding
 import com.webot.swen3001.models.Exposures
 import com.webot.swen3001.utils.AppDatabase
-import kotlinx.android.synthetic.main.fragment_notifications.view.*
+import com.webot.swen3001.utils.Utils
 import kotlin.concurrent.thread
 
-class StatusFragment : Fragment() {
 
-  private lateinit var viewModel: StatusViewModel
+class StatusFragment : Fragment() {
 
   private lateinit var binding: FragmentNotificationsBinding
 
@@ -31,8 +28,10 @@ class StatusFragment : Fragment() {
 
 
 
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                            savedInstanceState: Bundle?): View? {
+  override fun onCreateView(
+      inflater: LayoutInflater, container: ViewGroup?,
+      savedInstanceState: Bundle?
+  ): View? {
 
 
       val rootView: View = inflater.inflate(R.layout.fragment_notifications, container, false)
@@ -52,7 +51,7 @@ class StatusFragment : Fragment() {
 
           val arr =       db.queriesExposure().loadExposureLogs()
           for (log in arr){
-              var data = Exposures(0,log.distance, log.date)
+              var data = Exposures(0, log.distance, log.date)
               dataList.add(data)
               Log.d("Exposures: ", "${log.distance}")
 
@@ -75,26 +74,26 @@ class StatusFragment : Fragment() {
       }
 
 
+      val exposure: Switch = rootView.findViewById(R.id.exposure)
+      val status: Switch = rootView.findViewById(R.id.status)
+
+      exposure.isChecked= Utils.getNotification()
+      status.isChecked= Utils.getStatus()
+
+      exposure.setOnCheckedChangeListener({ buttonView, isChecked ->
+          Utils.updateNotification(isChecked)
+      })
+
+      status.setOnCheckedChangeListener({ buttonView, isChecked ->
+
+          Utils.updateStatus(isChecked)
+
+      })
 
 
 
-      //ADDING EVENT LISTENER TO THE UPDATE STATUS CARD ON PROFILE SCREEN
-      val updateStatusCard: View = rootView.findViewById(R.id.mystatus_card)
-      updateStatusCard.setOnClickListener {
-          val updateMyStatusIntent = Intent(requireContext(), UpdateStatus::class.java)
-          startActivity(updateMyStatusIntent)
-      }
 
-      //ADDING EVENT LISTENER TO THE EXPOSURE NOTIFICATIONS CARD ON PROFILE SCREEN
-      val expNotificationsCard: View = rootView.findViewById(R.id.expNotifications_card)
-      expNotificationsCard.setOnClickListener {
-          val expNotificationsIntent = Intent(requireContext(), ExposureNotifications::class.java)
-          startActivity(expNotificationsIntent)
-      }
-
-
-
-    return rootView
+      return rootView
 
     }
 }
