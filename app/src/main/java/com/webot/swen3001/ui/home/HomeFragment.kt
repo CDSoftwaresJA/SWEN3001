@@ -53,10 +53,14 @@ class HomeFragment : Fragment() {
     val broadcastSwitch = rootView.findViewById<SwitchMaterial>(R.id.broadcastSwitch)
     broadcastSwitch?.setOnCheckedChangeListener { _, isChecked ->
 //      val msg: String = if (isChecked) "Broadcasting turned on" else "Broadcasting turned off"
-      val msg: String
+      var msg: String
       if (isChecked) {
         msg = "Broadcasting turned on"
         Toasty.success(requireContext(), msg, Toast.LENGTH_SHORT).show()
+
+        msg = "Please ensure bluetooth is turned on"
+        Toasty.info(requireContext(), msg, Toast.LENGTH_SHORT).show()
+
         exposure.startScan()
 
       } else {

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.room.Room
 import com.webot.swen3001.MainActivity
@@ -11,6 +12,7 @@ import com.webot.swen3001.R
 import com.webot.swen3001.adapter.SymptomsChecklistAdapter
 import com.webot.swen3001.models.SymptomsLog
 import com.webot.swen3001.utils.AppDatabase
+import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.activity_symptoms.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -43,6 +45,9 @@ class SymptomsActivity : AppCompatActivity() {
                 db.queriesSymptoms().insertSymptomsLogs(SymptomsLog(0,currentDate,parseString))
 
             }
+
+            val msg = "Symptom(s) logged successfully"
+            Toasty.success(this, msg, Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
