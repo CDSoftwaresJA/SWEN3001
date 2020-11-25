@@ -5,14 +5,20 @@ import android.bluetooth.BluetoothAdapter.LeScanCallback
 import android.content.Context
 import android.speech.tts.TextToSpeech
 import android.util.Log
+import androidx.room.Room
+import com.webot.swen3001.models.Exposures
+import com.webot.swen3001.models.SymptomsLog
 import es.dmoral.toasty.Toasty
+import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.concurrent.thread
 
 // Java platform code that powers Love is Blue
 class ExposureBluetooth(private val context: Context) {
     private val mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
     private var uuid: String? = null
     lateinit var mTTS: TextToSpeech
+    lateinit var db : AppDatabase
 
     private val mLeScanCallback =
         LeScanCallback { device, rssi, scanRecord ->
@@ -33,14 +39,25 @@ class ExposureBluetooth(private val context: Context) {
             Log.d("Result : ", result)
             if (uuid != found) {
                 uuid = found
+
                 Toasty.warning(context, result).show()
                 mTTS.speak("You are too close, please maintain social distancing ", TextToSpeech.QUEUE_FLUSH, null)
 
+                thread {
+                    val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+                    val currentDate = sdf.format(Date())
+                    db.queriesExposure().insertExposureLogs(Exposures(0,"$currentDate","$rssi"))
+                }
 
             }
         }
 
     fun startScan() {
+        db = Room.databaseBuilder(
+            context,
+            AppDatabase::class.java, "tracer"
+        ).build()
+
 
         mTTS = TextToSpeech(context, TextToSpeech.OnInitListener { status ->
             if (status != TextToSpeech.ERROR){
