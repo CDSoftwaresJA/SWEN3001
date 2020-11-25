@@ -75,20 +75,20 @@ class StatusFragment : Fragment() {
 
 
       val exposure: Switch = rootView.findViewById(R.id.exposure)
-      val status: Switch = rootView.findViewById(R.id.status)
+//      val status: Switch = rootView.findViewById(R.id.status)
 
       exposure.isChecked= Utils.getNotification()
-      status.isChecked= Utils.getStatus()
+//      status.isChecked= Utils.getStatus()
 
       exposure.setOnCheckedChangeListener({ buttonView, isChecked ->
           Utils.updateNotification(isChecked)
       })
-
-      status.setOnCheckedChangeListener({ buttonView, isChecked ->
-
-          Utils.updateStatus(isChecked)
-
-      })
+//
+//      status.setOnCheckedChangeListener({ buttonView, isChecked ->
+//
+//          Utils.updateStatus(isChecked)
+//
+//      })
 
 
 
