@@ -4,7 +4,9 @@ package com.webot.swen3001.ui.statistics
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.GsonBuilder
@@ -25,6 +27,7 @@ class StatisticsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         return inflater.inflate(R.layout.recycler_view_fragment, container, false)
 
 
@@ -36,11 +39,11 @@ class StatisticsFragment : Fragment() {
 
         //my_recycler.setBackgroundColor(Color.BLUE)
         my_recycler.layoutManager = LinearLayoutManager(activity)
-        fetchJson()
+        fetchJson(view)
     }
 
 
-    private fun fetchJson(){
+    private fun fetchJson(view: View){
 
         val url2="https://api.covid19api.com/dayone/country/jamaica"
         val request = Request.Builder().url(url2).build()
@@ -48,11 +51,16 @@ class StatisticsFragment : Fragment() {
         client.newCall(request).enqueue(object: Callback{
 
             override fun onResponse(call: Call, response: Response) {
+                var progressBar:ProgressBar = view.findViewById(R.id.progressStats)
+
+
                 val body = response.body?.string()
                 println(body)
                 val gson= GsonBuilder().create()
                 val data = gson.fromJson(body,Array<RequestDataItem>::class.java)
                 requireActivity().runOnUiThread {
+                    progressBar.visibility= GONE
+
                     if (isAdded)
                         my_recycler.adapter= MyAdapter(data)
                 }
