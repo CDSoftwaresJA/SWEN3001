@@ -16,24 +16,26 @@ class SymptomsChecklistAdapter(context: Context) : BaseAdapter() {
     private var mContext = context
 
     companion object Objects {
-        var symptomsList = listOf<String>()
+        lateinit var symptomsList: List<String>
         var checkBoxListState = mutableListOf<Boolean>()
     }
 
     init {
-        symptomsList += "Sore Throat"
-        symptomsList += "Fever"
-        symptomsList += "Nasal Congestion"
-        symptomsList += "Cough"
-        symptomsList += "Difficulty Breathing"
-        symptomsList += "Fatigue"
-        symptomsList += "Body/Muscle Aches"
-        symptomsList += "Nausea"
-        symptomsList += "Headache"
-        symptomsList += "Loss of taste/smell"
-        symptomsList += "Chest Pain"
-        symptomsList += "Diarrhea"
-        symptomsList += "Abdominal Pain"
+        symptomsList = listOf(
+            "Sore Throat",
+            "Fever",
+            "Nasal Congestion",
+            "Cough",
+            "Difficulty Breathing",
+            "Fatigue",
+            "Body/Muscle Aches",
+            "Nausea",
+            "Headache",
+            "Loss of taste/smell",
+            "Chest Pain",
+            "Diarrhea",
+            "Abdominal Pain"
+        )
 
         initializeStateList()
     }
