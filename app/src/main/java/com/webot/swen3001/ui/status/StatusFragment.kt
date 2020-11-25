@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CompoundButton
 import android.widget.Switch
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -80,9 +81,16 @@ class StatusFragment : Fragment() {
       exposure.isChecked= Utils.getNotification()
 //      status.isChecked= Utils.getStatus()
 
-      exposure.setOnCheckedChangeListener({ buttonView, isChecked ->
+      exposure.setOnCheckedChangeListener { buttonView, isChecked ->
           Utils.updateNotification(isChecked)
-      })
+          if (exposure.isChecked) {
+              Toast.makeText(context, "Push Notifications Are Now Enabled", Toast.LENGTH_SHORT)
+                  .show()
+          } else {
+              Toast.makeText(context, "Push Notifications Are Now Disabled", Toast.LENGTH_SHORT)
+                  .show()
+          }
+      }
 //
 //      status.setOnCheckedChangeListener({ buttonView, isChecked ->
 //
