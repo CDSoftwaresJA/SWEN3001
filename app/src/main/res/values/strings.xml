@@ -30,13 +30,13 @@
     <string name="checkSubmitButton">Submit Symptoms</string>
 
 
-    <string name="exposures">Exposures</string>
+    <string name="exposures">Exposure Notifications</string>
     <string name="exposures_switch">On ></string>
-    <string name="exposure_notifications">Exposure Notifications</string>
+    <string name="exposure_notifications">Enable Notifications</string>
     <string name="notification_info">You will be notified if you are exposed to COVID-19,\nExposure last checked Today at</string>
-    <string name="change_stat">Update My Status</string>
+    <string name="change_stat">Update status</string>
     <string name="change_stat_switch">Negative ></string>
-    <string name="my_status">My Status</string>
+    <string name="my_status">My COVID-19 Status</string>
     <string name="exposures2">EXPOSURES IN PAST 14 DAYS</string>
     <string name="possible_exposure">Possible Exposure</string>
     <string name="exp_date">April 23, 2020</string>
@@ -44,12 +44,17 @@
 
 
     // -----------------UPDATE STATUS -----------------
-    <string name="positive">Positive</string>
-    <string name="negative">Negative</string>
+    <string-array name="statuses">
+        <item>Positive</item>
+        <item>Negative</item>
+    </string-array>
+
 
     // -----------------Exposure Notifications -----------------
-    <string name="exp_on">On</string>
-    <string name="exp_off">Off</string>
+    <string-array name="expNotif">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
 
     >>>>>>> 0f983d241aa081e73a5f26e23a8d2465e0f0aee4
 </resources>

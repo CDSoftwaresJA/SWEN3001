@@ -6,6 +6,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +18,7 @@ import com.webot.swen3001.adapter.ExposuresAdapter
 import com.webot.swen3001.databinding.FragmentNotificationsBinding
 import com.webot.swen3001.models.Exposures
 import com.webot.swen3001.utils.AppDatabase
+import kotlinx.android.synthetic.main.fragment_notifications.view.*
 import kotlin.concurrent.thread
 
 class StatusFragment : Fragment() {
@@ -32,8 +36,7 @@ class StatusFragment : Fragment() {
 
 
       val rootView: View = inflater.inflate(R.layout.fragment_notifications, container, false)
-
-
+      
 
 
       thread {

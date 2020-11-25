@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:background="@drawable/update_status_activity"
-        android:text="@string/positive" />
+        />
 
     <Button
         android:id="@+id/negativebtn"
@@ -23,5 +23,5 @@
         android:background="@drawable/update_status_activity"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="@string/negative" />
+        />
 </LinearLayout>
