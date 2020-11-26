@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.switchmaterial.SwitchMaterial
 import com.webot.swen3001.R
 import com.webot.swen3001.utils.ExposureBluetooth
+import com.webot.swen3001.utils.Utils
 import es.dmoral.toasty.Toasty
 
 class HomeFragment : Fragment() {
@@ -51,8 +52,13 @@ class HomeFragment : Fragment() {
     }
 
     val broadcastSwitch = rootView.findViewById<SwitchMaterial>(R.id.broadcastSwitch)
+    broadcastSwitch.isChecked = Utils.getBroadcast()
+    if(broadcastSwitch.isChecked) {
+      exposure.startScan()
+    }
     broadcastSwitch?.setOnCheckedChangeListener { _, isChecked ->
 //      val msg: String = if (isChecked) "Broadcasting turned on" else "Broadcasting turned off"
+      Utils.updateBroadcast(isChecked)
       var msg: String
       if (isChecked) {
         msg = "Broadcasting turned on"
@@ -60,7 +66,6 @@ class HomeFragment : Fragment() {
 
         msg = "Please ensure bluetooth is turned on"
         Toasty.info(requireContext(), msg, Toast.LENGTH_SHORT).show()
-
         exposure.startScan()
 
       } else {
