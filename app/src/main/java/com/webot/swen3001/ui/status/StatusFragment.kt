@@ -5,9 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CompoundButton
-import android.widget.Switch
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -77,6 +75,30 @@ class StatusFragment : Fragment() {
 
       val exposure: Switch = rootView.findViewById(R.id.exposure)
 //      val status: Switch = rootView.findViewById(R.id.status)
+      val status: Spinner = rootView.findViewById(R.id.statusSpinner)
+      val statusAdapter = ArrayAdapter.createFromResource(
+          requireContext(),
+          R.array.statuses,
+          android.R.layout.simple_spinner_item
+      )
+      statusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+      status.adapter = statusAdapter
+      status.setSelection(statusAdapter.getPosition(Utils.getStatus()))
+      status.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+          override fun onItemSelected(
+              parent: AdapterView<*>?,
+              view: View?,
+              position: Int,
+              id: Long
+          ) {
+              val selectedItem = parent?.getItemAtPosition(position) as String
+              Utils.updateStatus(selectedItem)
+          }
+
+          override fun onNothingSelected(parent: AdapterView<*>?) {
+              TODO("Not yet implemented")
+          }
+      }
 
       exposure.isChecked= Utils.getNotification()
 //      status.isChecked= Utils.getStatus()

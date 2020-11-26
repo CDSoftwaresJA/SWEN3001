@@ -3,11 +3,11 @@ package com.webot.swen3001.utils
 import com.orhanobut.hawk.Hawk
 
 object Utils {
-     fun updateStatus(boolean: Boolean){
-        Hawk.put("status",boolean)
+     fun updateStatus(string: String){
+        Hawk.put("status",string)
     }
-    fun getStatus():Boolean{
-        return Hawk.get("status",true)
+    fun getStatus():String{
+        return Hawk.get("status","Negative")
     }
     fun getNotification():Boolean{
         return Hawk.get("notification",true)
